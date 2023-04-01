@@ -2,13 +2,15 @@ package com.skcc.nxmile.service;
 
 import com.skcc.nxmile.domain.Member;
 import com.skcc.nxmile.repository.IMemberRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
-@Service
+
 public class MemberService {
-    @Autowired
-    private IMemberRepository memberRepository;
+
+    private final IMemberRepository memberRepository;
+
+    public MemberService(IMemberRepository iMemberRepository) {
+        this.memberRepository = iMemberRepository;
+    }
 
     public Member save (Member member){
 
